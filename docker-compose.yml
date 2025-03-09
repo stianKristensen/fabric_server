@@ -14,7 +14,7 @@ services:
     stdin_open: true
     environment:
       EULA: "TRUE"
-      TYPE: "FORGE"
+      TYPE: "NEOFORGE"
       VERSION: "1.21.1"
       MEMORY: "2048M"
       DIFFICULTY: "2"
