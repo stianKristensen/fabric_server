@@ -13,6 +13,7 @@ services:
     environment:
       EULA: "TRUE"
       TYPE: "FORGE"
+      VERSION: "1.21.1"
       MEMORY: "2048M"
       DIFFICULTY: "2"
       PVP: "false"
