@@ -12,6 +12,8 @@ services:
         ipv4_address: 172.16.238.10
     tty: true
     stdin_open: true
+    ports:
+      - "25565:25565"
     environment:
       EULA: "TRUE"
       TYPE: "FABRIC"
