@@ -8,4 +8,4 @@ services:
     build: ./server/
     volumes:
       - ./server_data:/app
-    command: -Xmx${MAX_RAM}G -jar $JAR_NAME nogui
+    command: -Xmx${MAX_RAM}G -jar ${JAR_NAME} nogui
