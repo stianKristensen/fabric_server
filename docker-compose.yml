@@ -1,10 +1,15 @@
 services:
   playit_tunnel:
     image: ghcr.io/playit-cloud/playit-agent:0.15
+    networks:
+      - app_net
     environment:
     - SECRET_KEY=${PLAYIT_AGENT_KEY}
   mc:
     image: itzg/minecraft-server:latest
+    networks:
+      app_net:
+        ipv4_address: 172.16.238.10
     tty: true
     stdin_open: true
     environment:
@@ -19,3 +24,10 @@ services:
         lithium
     volumes:
       - "./data:/data"
+
+networks:
+  app_net:
+    ipam:
+      driver: bridge
+      config:
+        - subnet: "172.16.238.0/24"
