@@ -1,0 +1,11 @@
+services:
+  playit_tunnel:
+    image: ghcr.io/playit-cloud/playit-agent:0.15
+    environment:
+    - SECRET_KEY=${PLAYIT_AGENT_KEY}
+  mc_server:
+    image: mc_server_fabric
+    build: ./server/
+    volumes:
+      - ./server_data:/app
+    command: -Xmx${MAX_RAM}G -jar $JAR_NAME nogui
