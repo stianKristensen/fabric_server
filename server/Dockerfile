@@ -2,7 +2,7 @@ FROM debian:bookworm
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN sudo add-apt-repository ppa:openjdk-r/ppa
+RUN add-apt-repository ppa:openjdk-r/ppa
 RUN apt update -y
 RUN apt install -y curl
 RUN apt install -y openjdk-21-jre-headless
