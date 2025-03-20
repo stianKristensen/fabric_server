@@ -1,12 +1,14 @@
 services:
   playit_tunnel:
     image: ghcr.io/playit-cloud/playit-agent:0.15
+    restart: always
     networks:
       - app_net
     environment:
     - SECRET_KEY=${PLAYIT_AGENT_KEY}
   mc:
     image: itzg/minecraft-server:latest
+    restart: always
     networks:
       app_net:
         ipv4_address: 172.16.238.10
